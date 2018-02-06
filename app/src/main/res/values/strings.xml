@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TMDB Demo</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="movies">Movie</string>
+    <string name="tv">TV</string>
+    <string name="in_parentheses">(%d)</string>
+    <string name="no_results">No results found for your query</string>
+    <string name="error_encountered">Sorry!</string>
+    <string name="ok">OK</string>
+</resources>

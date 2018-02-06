@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/button_margin"
+                android:layout_height="wrap_content" />
+
+            <ToggleButton
+                android:id="@+id/tv_toggle"
+                android:textOn="@string/tv"
+                android:textOff="@string/movies"
+                android:layout_margin="@dimen/button_margin"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:indeterminate="true"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/item_list"
+            android:name="com.vssh.tmdbdemo.ItemListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginRight="@dimen/text_margin"
+            app:layoutManager="LinearLayoutManager"
+            tools:context="com.vssh.tmdbdemo.ui.MainActivity"
+            tools:listitem="@layout/item_list_content" />
+
+    </LinearLayout>
+</layout>
