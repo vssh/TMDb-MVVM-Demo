@@ -8,3 +8,6 @@ Before building the app, add a `gradle.properties` file to the root folder and a
 `TmdbApiKey="XYZ"`
 
 where XYZ is you TMDb API key.
+
+# Download
+[apk](https://github.com/vssh/TMDb-MVVM-Demo/raw/master/app-release.apk)
