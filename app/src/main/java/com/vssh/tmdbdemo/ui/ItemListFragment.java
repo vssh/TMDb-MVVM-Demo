@@ -131,12 +131,22 @@ public class ItemListFragment extends Fragment {
             }
         });
 
-        // change image on TV toggle
+        // set TV toggle state
         binding.tvToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 viewModel.onTvToggle(b);
-                if(b) {
+            }
+        });
+        binding.tvToggle.setChecked(viewModel.isTv.getValue());
+        binding.tvToggle.setBackground(null);
+        binding.tvToggle.setButtonDrawable(getResources().getDrawable(R.drawable.ic_local_movies_24dp));
+
+        // observe TV toggle
+        viewModel.isTv.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                if(aBoolean) {
                     binding.tvToggle.setButtonDrawable(getResources().getDrawable(R.drawable.ic_tv_24dp));
                 }
                 else {
@@ -144,9 +154,6 @@ public class ItemListFragment extends Fragment {
                 }
             }
         });
-        binding.tvToggle.setChecked(viewModel.isTv.getValue());
-        binding.tvToggle.setBackground(null);
-        binding.tvToggle.setButtonDrawable(getResources().getDrawable(R.drawable.ic_local_movies_24dp));
 
         // load detailsFragment when an item is selected
         viewModel.selectedItem.observe(getActivity(), new Observer<GenericItem>() {
